@@ -22,7 +22,7 @@ public class Book {
         if(available)
         {
             available = false;
-            System.out.println(title+"borrowed confirmed.");
+            System.out.println(title+" borrowed confirmed.");
         }
         else
         {
