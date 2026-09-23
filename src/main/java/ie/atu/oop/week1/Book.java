@@ -5,4 +5,15 @@ public class Book {
     public String author;
     public int pageCount;
     public boolean available;
+
+    public Book(){
+
+    }
+    public void displayDetails(){
+        System.out.println("the title of this book is " + title);
+        System.out.println("the books author is " + author);
+        System.out.println("the books page count is " + pageCount);
+        System.out.println("the status of this book is " +available);
+        System.out.println("\n");
+    }
 }
