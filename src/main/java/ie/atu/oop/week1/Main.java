@@ -21,6 +21,8 @@ public class Main {
         secondBook.available = true;
 
         firstBook.displayDetails();
+        firstBook.borrowBook();
+        firstBook.displayDetails();
         secondBook.displayDetails();
 
     }
