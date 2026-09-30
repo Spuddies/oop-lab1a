@@ -37,7 +37,7 @@ public class Book {
     public BookStatus getStatus() {
         return status;
     }
-    public void boorowBook(){
+    public void borrowBook(){
         if(status==BookStatus.ON_LOAN){
             throw new IllegalStateException("Book is already on a loan");
         }
