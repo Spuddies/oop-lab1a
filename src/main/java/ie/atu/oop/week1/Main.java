@@ -4,17 +4,9 @@ package ie.atu.oop.week1;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        try {
-            Book myBook = new Book("Dune", "Frank", 413);
-            System.out.println(myBook.getTitle());
-            System.out.println(myBook.getAuthor());
-            System.out.println(myBook.getPageCount());
-        }
-        catch(IllegalArgumentException ex){
-            System.out.println(ex.getMessage());
-        }
-
-
-
+        Book book = new Book("Dune", "Frank Herbert", 412);
+        System.out.println(book.getStatus());
+        book.borrowBook();
+        System.out.println(book.getStatus());
     }
 }
