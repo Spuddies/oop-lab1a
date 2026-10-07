@@ -68,5 +68,47 @@ rejected return: "Book must not be null" error message is displayed
 
 
 ## Lab-4 Collections
+Lab 4 changes LibraryService from working with a single supplied Book to owning a
+List<Book>.
 
-## Arraylist
+## Explain what List<Book> tells the compiler.
+List<Book> tells the complier that the list stores book.
+
+## Explain why final does not prevent books.add(...).
+Final means that the reference variable cannot be changed to point at a different list but final does not make the contents of the unchangeable.
+
+## Explain what the enhanced for loop variable represents.
+Book book represents the current book object being looked at each part of the loop,the Book variable is a reference to each Book object in the books list one at a time.
+
+## Describe what findBookByTitle returns for a known and an unknown title.
+if the book title exists the method returns the book object and there is error handling so "dune","Dune" and "DUNE" will match
+and if it can't find a match it returns null.
+
+## Explain why removeBook reuses findBookByTitle instead of writing another search loop.
+removeBook reuses findBookByTitle so you do not look for a book twice and also code reuse is good practice and makes the code easier to maintain.
+
+## Explain which responsibilities belong to Main, LibraryService and Book.
+Main is responsible for running and demonstrating the program in this example it creates Book objects,creates the LibraryService, Adds books to the library ,Calls methods such as loanBook(), returnBook() and removeBook() and prints outputs to the console
+
+LibraryService is responsible for managing the collection of books.
+it contains the Array list used to store the books. private final List<Book> books = new ArrayList<Book>();
+it also provides operations such as :
+addBook()
+findBookByTitle()
+removeBook()
+loanBook()
+returnBook()
+getBookCount()
+getAllBooks()
+
+Book is responsible for representing one individual book and managing its own sate.
+it stores:
+private final String title;
+private final String author;
+private final int pageCount;
+private BookStatus status;
+
+it also controls if a book is available or on loan
+
+## Maven
+[book-tracker-1.0-SNAPSHOT.jar](target/book-tracker-1.0-SNAPSHOT.jar)
