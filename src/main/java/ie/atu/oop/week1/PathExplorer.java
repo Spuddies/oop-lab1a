@@ -10,6 +10,7 @@ public class PathExplorer {
         System.out.println("Parent: " + file.getParent());
         System.out.println("Absolute: " + file.toAbsolutePath());
         System.out.println("Exists: " + Files.exists(file));
+        //it is showing a path, it is not creating the file so it does not show in our project
     }
 }
 
