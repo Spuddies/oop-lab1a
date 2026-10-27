@@ -7,19 +7,23 @@ import java.util.ArrayList;
 import java.util.List;
 public class Main {
     public static void main(String[] args) {
-        Path file = Path.of("data", "books.csv");
-        List<String> lines = new ArrayList<>();
-        lines.add("title,author,pageCount,status");
-        lines.add("Dune,Frank Herbert,412,AVAILABLE");
-        lines.add("Clean Code,Robert C. Martin,464,AVAILABLE");
+
+        LibraryService service = new LibraryService();
+        Book dune = new Book("Dune", "Frank Herbert", 412);
+        Book cleanCode = new Book(
+                "Clean Code", "Robert C. Martin", 464);
+        service.addBook(dune);
+        service.addBook(cleanCode);
+        service.loanBook("Dune", 7);
+        BookFileStore store = new BookFileStore(
+                Path.of("data", "books.csv"));
         try {
-            Files.createDirectories(file.getParent());
-            Files.write(file, lines);
-            System.out.println("CSV file written");
+            store.save(service.getBooks());
+            System.out.println("Saved: " + service.getBookCount());
         }
         catch (IOException ex) {
-            System.out.println("Could not write file: "
-                    + ex.getMessage());
+            System.out.println("Save failed: " + ex.getMessage());
         }
+
     }
 }
