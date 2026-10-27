@@ -110,5 +110,25 @@ private BookStatus status;
 
 it also controls if a book is available or on loan
 
+
+## lab 5 Exceptions, CSV and Library Persistence
+
+## Briefly explain the difference between the throw statement inside Book and the catch block used by the caller.
+the throw statement inside Book raises an exception when invalid data or an invalid operation is detected. The caller’s catch block handles the exception, such as by displaying an error message.
+
+## State that Lab 5 adds exception handling and CSV persistence to the Library application.
+Book throws exceptions for invalid data or actions, such as a blank title or borrowing a book already on loan. The caller uses try and catch to handle errors and display a message.
+BookFileStore.save() writes book details to a CSV file, and load() reads them back into Book objects, restoring their loan status. This lets the library retain its data between runs. The columns are title, author, pageCount, status.
+
+## Explain the difference between unchecked NumberFormatException and checked IOException.
+NumberFormatException is unchecked: It happens when invalid text is converted to a number, such as Integer.parseInt("abc"). Java does not require you to catch or declare it.
+IOException is checked: It occurs when an input/output operation fails, such as reading a file. Java requires you to handle it with try/catch or declare it with throws IOException.
+
+## Explain the difference between Path and Files.
+Path represents the location of a file or directory, such as Path.of("data", "books.csv"). Creating a Path does not create the file.
+Files provides methods to work with files and directories, such as Files.exists(path), Files.readAllLines(path), and Files.write(path, lines).
+
+## Document the CSV columns in order: title, author, pageCount, status.
+![img.png](img.png)
 ## Maven
 [book-tracker-1.0-SNAPSHOT.jar](target/book-tracker-1.0-SNAPSHOT.jar)
