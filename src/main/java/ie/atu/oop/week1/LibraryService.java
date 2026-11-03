@@ -61,5 +61,8 @@ public class LibraryService {
 
 
     }
+    public List<Book> getBooks() {
+        return new ArrayList<>(books);
+    }
 
 }
